@@ -1,370 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Josamine Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/20L+sMh1TPh4zP/3J9+094p6iI4g4J9+8+8+0+0+" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa; /* Light gray */
-            color: #212529; /* Dark text */
-        }
-        .navbar {
-            background-color: #ffffff; /* White navbar */
-            box-shadow: 0 2px 4px rgba(0,0,0,.05);
-        }
-        .hero-section {
-            background-color: #e9ecef; /* Lighter gray for hero */
-        }
-        .project-card, .skill-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border: none;
-            border-radius: 1rem;
-        }
-        .project-card:hover, .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-        }
-        .btn-primary {
-            background-color: #007bff; /* Primary blue */
-            border-color: #007bff;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            border-color: #0056b3;
-        }
-        .tag {
-            font-size: 0.8em;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50rem;
-        }
-        .tag-html, .tag-css { background-color: #e34c26; color: white; }
-        .tag-js { background-color: #f7df1e; color: black; }
-        .tag-java { background-color: #f89820; color: white; }
-        .tag-php { background-color: #777bb4; color: white; }
-        .tag-mysql { background-color: #4479a1; color: white; }
-        .tag-react { background-color: #61dafb; color: black; }
-        .tag-angular { background-color: #dd1b16; color: white; }
-        .tag-cpp { background-color: #004d9c; color: white; }
-        .tag-wix { background-color: #000000; color: white; }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        .section-title span {
-            color: #007bff;
-        }
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josamine R. Parungao | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f9fafc;
+      color: #333;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+    }
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+    }
+    .hero-img {
+      border-radius: 50%;
+      border: 6px solid #e0f2fe;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .btn-custom {
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+    }
+    .project-card {
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #3b82f6;
+    }
+    .contact-info i {
+      color: #3b82f6;
+    }
+    footer {
+      background: #111827;
+      color: #f3f4f6;
+      padding: 1.5rem 0;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Josamine Portfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#hire-me">Why Hire Me?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-            <a href="link-to-your-resume.pdf" target="_blank" class="btn btn-primary d-none d-lg-block ms-3">
-                Download CV
-            </a>
-        </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold gradient-text" href="#">Josamine</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav fw-semibold">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-<header class="hero-section py-5 py-md-0 d-flex align-items-center min-vh-100">
-    <div class="container">
-        <div class="row align-items-center flex-column-reverse flex-md-row">
-            <div class="col-md-7 text-center text-md-start mb-4 mb-md-0">
-                <h1 class="display-4 fw-bold mb-3">Hi, I'm <span class="text-primary">Josamine R. Parungao</span></h1>
-                <h2 class="h4 text-muted mb-4">
-                    I'm a <span class="fw-bold text-dark">Web & Mobile Developer</span>
-                </h2>
-                <p class="lead mb-4">
-                    As a recent graduate, I bring a strong foundation in web and mobile development, with hands-on experience using HTML, CSS, JavaScript, PHP, and Java. I'm passionate about creating practical digital solutions and eager to contribute to real-world projects.
-                </p>
-                <a href="#projects" class="btn btn-primary btn-lg me-2 mb-2">View My Work</a>
-                <a href="#contact" class="btn btn-outline-secondary btn-lg mb-2">Contact Me</a>
-            </div>
-            <div class="col-md-5 d-flex justify-content-center">
-                <div class="rounded-circle overflow-hidden shadow-lg border border-4 border-white" style="width: 250px; height: 250px;">
-                    <img src="profile.jpg" alt="Josamine R. Parungao" class="img-fluid w-100 h-100 object-fit-cover">
-                </div>
-            </div>
-        </div>
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="container text-center text-lg-start d-flex flex-column flex-lg-row align-items-center gap-5">
+    <div class="col-lg-6">
+      <h1 class="display-4 fw-bold">Hi, I'm <span class="gradient-text">Josamine</span></h1>
+      <h2 class="h4 text-muted mb-3">BS Information Technology | Web & Mobile Developer</h2>
+      <p class="text-secondary mb-4">
+        A Web Systems Technology graduate passionate about building modern web and mobile applications. Skilled in PHP, Java, MySQL, and JavaScript. I thrive in collaborative projects and aim to create practical, user-centered digital solutions.
+      </p>
+      <a href="#projects" class="btn btn-primary btn-custom me-2">View My Work</a>
+      <a href="#contact" class="btn btn-outline-primary btn-custom">Contact Me</a>
+      <a href="resume.pdf" class="btn btn-success btn-custom ms-2" download><i class="fas fa-download me-1"></i>Download Resume</a>
     </div>
-</header>
-
-<section id="projects" class="py-5 bg-white">
-    <div class="container">
-        <h2 class="text-center mb-5 section-title">My <span>Projects</span></h2>
-        
-        <div class="row justify-content-center mb-5">
-            <div class="col-md-10">
-                <div class="card project-card p-4">
-                    <div class="row g-0">
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold">Featured Project: POS & Inventory Management System</h5>
-                                <p class="card-text text-muted">
-                                    A robust full-stack system application built with <span class="fw-bold">Java</span> and <span class="fw-bold">MySQL</span>. This project demonstrates my ability to create a complete, functional application from the ground up, handling data management and user interface design.
-                                </p>
-                                <div class="d-flex flex-wrap gap-2 mb-3">
-                                    <span class="tag tag-java">Java</span>
-                                    <span class="tag tag-mysql">MySQL</span>
-                                </div>
-                                <a href="#" class="btn btn-primary btn-sm">View Details</a>
-                            </div>
-                        </div>
-                         <div class="col-md-4 d-flex align-items-center justify-content-center">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Restaurant Mobile Application</h5>
-                        <p class="card-text text-muted">
-                            A mobile app for food ordering and catering service booking, focusing on elegant UI/UX design.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <span class="tag tag-java">Java</span>
-                            <span class="tag">UI/UX Design</span>
-                            <span class="tag">SQLite</span>
-                        </div>
-                        <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view" class="btn btn-outline-primary btn-sm">View APK</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Voter's Registration System</h5>
-                        <p class="card-text text-muted">
-                            A full-stack system for managing voter registrations and personal details.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <span class="tag tag-java">Java</span>
-                            <span class="tag tag-mysql">MySQL</span>
-                        </div>
-                        <a href="https://github.com/Josaminep/Voters-Registration" class="btn btn-outline-primary btn-sm">Github Repo</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Simple Todo List</h5>
-                        <p class="card-text text-muted">
-                            A simple, responsive app to keep track of daily tasks.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <span class="tag tag-html">HTML/CSS</span>
-                            <span class="tag tag-js">JavaScript</span>
-                        </div>
-                        <a href="https://josaminep.github.io/todo-app/" class="btn btn-outline-primary btn-sm">Live View</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Sari-Sari Store Inventory</h5>
-                        <p class="card-text text-muted">
-                            An inventory management system with full CRUD capabilities for a local store.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <span class="tag tag-html">HTML/CSS</span>
-                            <span class="tag tag-php">PHP</span>
-                            <span class="tag tag-js">JavaScript</span>
-                            <span class="tag tag-mysql">MySQL</span>
-                        </div>
-                        <a href="https://github.com/Josaminep/Simple-Inventory" class="btn btn-outline-primary btn-sm">Github Repo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="col-lg-5 text-center">
+      <img src="profile.jpg" alt="Profile" class="hero-img img-fluid" width="280" height="280">
     </div>
+  </div>
 </section>
 
+<!-- Projects -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">My <span class="gradient-text">Projects</span></h2>
+    <div class="row g-4">
+
+      <!-- POS & Inventory System -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card p-4">
+          <h5 class="fw-bold">POS & Inventory System</h5>
+          <p>Full-stack system built with Java and MySQL.</p>
+          <span class="badge bg-warning">Java</span>
+          <span class="badge bg-info text-dark">MySQL</span>
+        </div>
+      </div>
+
+      <!-- Restaurant Mobile App -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card p-4">
+          <h5 class="fw-bold">Restaurant Mobile App</h5>
+          <p>Food ordering & catering booking app (frontend).</p>
+          <span class="badge bg-warning">Java</span>
+          <span class="badge bg-secondary">SQLite</span>
+          <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view" target="_blank" class="d-block mt-2 text-primary">APK →</a>
+        </div>
+      </div>
+
+      <!-- Voter’s Registration System -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card p-4">
+          <h5 class="fw-bold">Voter’s Registration System</h5>
+          <p>Full-stack app for registering and managing voters.</p>
+          <span class="badge bg-warning">Java</span>
+          <span class="badge bg-info text-dark">MySQL</span>
+          <a href="https://github.com/Josaminep/Voters-Registration" target="_blank" class="d-block mt-2 text-primary">GitHub Repo →</a>
+        </div>
+      </div>
+
+      <!-- Payroll Management System -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card p-4">
+          <h5 class="fw-bold">Payroll Management System</h5>
+          <p>Developed during internship to automate payroll tasks.</p>
+          <span class="badge bg-primary">PHP</span>
+          <span class="badge bg-info text-dark">MySQL</span>
+        </div>
+      </div>
+
+      <!-- Shoes Inventory System -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card p-4">
+          <h5 class="fw-bold">Shoes Inventory System</h5>
+          <p>PHP & JavaScript CRUD system storing data in XML.</p>
+          <span class="badge bg-primary">PHP</span>
+          <span class="badge bg-warning">JavaScript</span>
+          <span class="badge bg-dark">XML</span>
+        </div>
+      </div>
+
+      <!-- Contact Book App -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card project-card p-4">
+          <h5 class="fw-bold">Contact Book App</h5>
+          <p>PHP app with login, search, and session tracking.</p>
+          <span class="badge bg-primary">PHP</span>
+          <span class="badge bg-info text-dark">MySQL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
 <section id="skills" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 section-title">My <span>Skills</span></h2>
-        <div class="row text-center g-4">
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="card skill-card h-100 p-3">
-                    <i class="fab fa-html5 fa-3x text-orange mb-3"></i>
-                    <h6 class="fw-bold">HTML</h6>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="card skill-card h-100 p-3">
-                    <i class="fab fa-css3-alt fa-3x text-primary mb-3"></i>
-                    <h6 class="fw-bold">CSS</h6>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="card skill-card h-100 p-3">
-                    <i class="fab fa-js fa-3x text-warning mb-3"></i>
-                    <h6 class="fw-bold">JavaScript</h6>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="card skill-card h-100 p-3">
-                    <i class="fab fa-php fa-3x text-purple mb-3"></i>
-                    <h6 class="fw-bold">PHP</h6>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="card skill-card h-100 p-3">
-                    <i class="fab fa-java fa-3x text-danger mb-3"></i>
-                    <h6 class="fw-bold">Java</h6>
-                </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-2">
-                <div class="card skill-card h-100 p-3">
-                    <i class="fas fa-database fa-3x text-info mb-3"></i>
-                    <h6 class="fw-bold">MySQL</h6>
-                </div>
-            </div>
-        </div>
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">My <span class="gradient-text">Skills</span></h2>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2"><i class="fab fa-html5 skill-icon"></i><h6>HTML</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fab fa-css3-alt skill-icon"></i><h6>CSS</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fab fa-js skill-icon"></i><h6>JavaScript</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fab fa-java skill-icon"></i><h6>Java</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fab fa-php skill-icon"></i><h6>PHP</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fas fa-database skill-icon"></i><h6>MySQL</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fas fa-code skill-icon"></i><h6>XML</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fas fa-mobile-alt skill-icon"></i><h6>Mobile Dev</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fas fa-laptop-code skill-icon"></i><h6>Web Systems</h6></div>
+      <div class="col-6 col-md-4 col-lg-2"><i class="fas fa-cogs skill-icon"></i><h6>System Analysis</h6></div>
     </div>
+  </div>
 </section>
 
-<section id="hire-me" class="py-5 bg-white">
-    <div class="container">
-        <h2 class="text-center mb-5 section-title">Why <span>Hire Me?</span></h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <p class="lead text-center mb-4">
-                    As a recent graduate, I offer a unique combination of fresh knowledge, a strong work ethic, and a genuine passion for problem-solving.
-                </p>
-                <ul class="list-unstyled text-muted text-center text-md-start">
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-check-circle text-success me-3"></i>
-                        <p class="mb-0">
-                            **Adaptability:** I'm a fast learner, constantly seeking to expand my knowledge of new technologies and best practices.
-                        </p>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-check-circle text-success me-3"></i>
-                        <p class="mb-0">
-                            **Team Player:** I excel at collaborating with others, contributing ideas, and supporting my colleagues to achieve shared goals.
-                        </p>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-check-circle text-success me-3"></i>
-                        <p class="mb-0">
-                            **Problem Solver:** I'm not just a coder; I'm a problem-solver who enjoys tackling challenges and creating efficient, user-friendly solutions.
-                        </p>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-check-circle text-success me-3"></i>
-                        <p class="mb-0">
-                            **Commitment to Quality:** I am dedicated to writing clean, well-documented code that is both functional and maintainable.
-                        </p>
-                    </li>
-                </ul>
-            </div>
+<!-- Contact -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5">Get In <span class="gradient-text">Touch</span></h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <p class="text-center text-muted">Open to collaborations, freelance projects, and full-time roles. Let’s build something great together!</p>
+        <ul class="list-unstyled mt-4 contact-info">
+          <li class="mb-2"><i class="fas fa-envelope me-2"></i> parungaojosamine06@gmail.com</li>
+          <li class="mb-2"><i class="fas fa-phone me-2"></i> +63981-538-2299</li>
+          <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Nueva Ecija, Philippines</li>
+        </ul>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+          <a href="https://www.linkedin.com/in/josamine-parungao/" target="_blank" class="text-primary fs-4"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Josaminep" target="_blank" class="text-dark fs-4"><i class="fab fa-github"></i></a>
+          <a href="1025422306094366774" target="_blank" class="text-primary fs-4"><i class="fab fa-discord"></i></a>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-
-<section id="contact" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 section-title">Get In <span>Touch</span></h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card p-4 shadow">
-                    <div class="card-body">
-                        <p class="text-center text-muted mb-4">
-                            I'm open to new opportunities, whether freelance or full-time. Feel free to reach out!
-                        </p>
-                        <div class="row text-center">
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center justify-content-center mb-2">
-                                    <i class="fas fa-envelope fa-2x me-3 text-primary"></i>
-                                    <div>
-                                        <h6 class="fw-bold mb-0">Email</h6>
-                                        <a href="mailto:parungaojosamine06@gmail.com" class="text-decoration-none text-muted">parungaojosamine06@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <div class="d-flex align-items-center justify-content-center mb-2">
-                                    <i class="fas fa-phone-alt fa-2x me-3 text-primary"></i>
-                                    <div>
-                                        <h6 class="fw-bold mb-0">Phone</h6>
-                                        <a href="tel:+639815382299" class="text-decoration-none text-muted">+63 981 538 2299</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <p class="text-muted">Connect with me on social media:</p>
-                            <a href="https://www.linkedin.com/in/josamine-parungao/" target="_blank" class="btn btn-outline-primary btn-lg me-2">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/Josaminep" target="_blank" class="btn btn-outline-primary btn-lg me-2">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" target="_blank" class="btn btn-outline-primary btn-lg">
-                                <i class="fab fa-discord"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; <span id="year"></span> Josamine R. Parungao. All Rights Reserved.</p>
+<!-- Footer -->
+<footer class="text-center">
+  <p class="mb-0">&copy; <span id="year"></span> Josamine R. Parungao. All Rights Reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Update the year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
