@@ -29,7 +29,7 @@
   <!-- HERO -->
   <section id="home" class="min-h-screen flex items-center justify-center pt-28 px-6">
     <div class="max-w-7xl grid md:grid-cols-2 gap-12 items-center">
-      <div class="animate-fadeIn">
+      <div>
         <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
           Hi, I'm 
           <span class="bg-gradient-to-r from-blue-600 to-yellow-400 bg-clip-text text-transparent">Josamine</span>
@@ -61,7 +61,7 @@
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Project Card -->
+        <!-- Project 1 -->
         <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
           <h3 class="text-xl font-semibold mb-2">POS and Inventory Management System</h3>
           <p class="text-gray-600 mb-4">Full-stack system with Java and MySQL.</p>
@@ -69,12 +69,9 @@
             <span class="px-3 py-1 text-sm rounded-full bg-orange-100 text-orange-800">Java</span>
             <span class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-800">MySQL</span>
           </div>
-          <button class="px-4 py-2 rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 transition">
-            View Details
-          </button>
         </div>
 
-        <!-- Project Card -->
+        <!-- Project 2 -->
         <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
           <h3 class="text-xl font-semibold mb-2">Restaurant Mobile Application</h3>
           <p class="text-gray-600 mb-4">Mobile app for food ordering & catering booking.</p>
@@ -86,7 +83,7 @@
           <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view" target="_blank" class="text-blue-600 font-medium hover:text-blue-800">APK →</a>
         </div>
 
-        <!-- Project Card -->
+        <!-- Project 3 -->
         <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
           <h3 class="text-xl font-semibold mb-2">Voter's Registration System</h3>
           <p class="text-gray-600 mb-4">System for managing voter details.</p>
@@ -98,6 +95,42 @@
         </div>
 
       </div>
+
+      <!-- Hidden Projects -->
+      <div id="more-projects" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 hidden">
+
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
+          <h3 class="text-xl font-semibold mb-2">Simple Todo List Application</h3>
+          <p class="text-gray-600 mb-4">Keep track of daily tasks and to-dos.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-800">HTML/CSS</span>
+            <span class="px-3 py-1 text-sm rounded-full bg-yellow-100 text-yellow-800">JavaScript</span>
+          </div>
+          <a href="https://josaminep.github.io/todo-app/" target="_blank" class="text-blue-600 font-medium hover:text-blue-800">Live View →</a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
+          <h3 class="text-xl font-semibold mb-2">Simple Inventory Management</h3>
+          <p class="text-gray-600 mb-4">CRUD inventory system for sari-sari store.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-sm rounded-full bg-indigo-100 text-indigo-800">PHP</span>
+            <span class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-800">MySQL</span>
+          </div>
+          <a href="https://github.com/Josaminep/Simple-Inventory" target="_blank" class="text-blue-600 font-medium hover:text-blue-800">Github Repo →</a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
+          <h3 class="text-xl font-semibold mb-2">Gabaldon Tourism Website</h3>
+          <p class="text-gray-600 mb-4">Tourism site showcasing attractions & resorts.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-sm rounded-full bg-purple-100 text-purple-800">Wix</span>
+          </div>
+          <a href="https://gabaldonturismo.wixsite.com/gabaldon-tourism" target="_blank" class="text-blue-600 font-medium hover:text-blue-800">Live View →</a>
+        </div>
+
+      </div>
+
+      <!-- Toggle Button -->
       <div class="text-center mt-10">
         <button id="toggle-projects" class="px-6 py-3 rounded-xl border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition shadow-sm">
           View All Projects
@@ -111,47 +144,38 @@
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-4xl font-extrabold text-center mb-14">My <span class="text-blue-600">Skills</span></h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fab fa-html5 text-orange-600 text-4xl mb-3"></i>
           <p class="font-semibold">HTML</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fab fa-css3-alt text-blue-600 text-4xl mb-3"></i>
           <p class="font-semibold">CSS</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fab fa-js text-yellow-500 text-4xl mb-3"></i>
           <p class="font-semibold">JavaScript</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fab fa-java text-red-600 text-4xl mb-3"></i>
           <p class="font-semibold">Java</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fas fa-database text-indigo-600 text-4xl mb-3"></i>
           <p class="font-semibold">MySQL</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fab fa-python text-green-600 text-4xl mb-3"></i>
           <p class="font-semibold">Python</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fab fa-php text-indigo-600 text-4xl mb-3"></i>
           <p class="font-semibold">PHP</p>
         </div>
-
         <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
           <i class="fas fa-code text-gray-700 text-4xl mb-3"></i>
           <p class="font-semibold">C++</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -171,7 +195,24 @@
   </section>
 
   <script>
+    // Year footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Toggle Projects
+    const toggleBtn = document.getElementById("toggle-projects");
+    const moreProjects = document.getElementById("more-projects");
+    let isVisible = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isVisible = !isVisible;
+      if (isVisible) {
+        moreProjects.classList.remove("hidden");
+        toggleBtn.textContent = "Show Less";
+      } else {
+        moreProjects.classList.add("hidden");
+        toggleBtn.textContent = "View All Projects";
+      }
+    });
   </script>
 </body>
 </html>
