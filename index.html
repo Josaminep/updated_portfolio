@@ -8,223 +8,163 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-900 font-sans">
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
-    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-      <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-yellow-400 bg-clip-text text-transparent">Portfolio</a>
-      <ul class="hidden md:flex gap-6 font-medium">
-        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
-        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
-        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#home" class="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-yellow-400 bg-clip-text text-transparent">
+        Portfolio
+      </a>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+        <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
       </ul>
       <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6">
-    <div class="max-w-6xl grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm 
+  <section id="home" class="min-h-screen flex items-center justify-center pt-28 px-6">
+    <div class="max-w-7xl grid md:grid-cols-2 gap-12 items-center">
+      <div class="animate-fadeIn">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+          Hi, I'm 
           <span class="bg-gradient-to-r from-blue-600 to-yellow-400 bg-clip-text text-transparent">Josamine</span>
         </h1>
-        <p class="text-lg text-gray-600 mb-6">BS in Information Technology graduate with hands-on experience in web & mobile development.</p>
+        <p class="text-lg text-gray-600 mb-8">A BS Information Technology graduate passionate about building modern web & mobile applications with clean and scalable solutions.</p>
         <div class="flex flex-wrap gap-4">
-          <a href="#projects" class="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">View My Work</a>
-          <a href="#contact" class="px-6 py-3 rounded-lg border border-blue-600 text-blue-600 font-medium hover:bg-blue-50 transition">Contact Me</a>
-          <a href="resume.pdf" download class="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-yellow-400 text-white font-medium hover:opacity-90 transition">
-            <i class="fas fa-download mr-2"></i>Download Resume
+          <a href="#projects" class="px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition shadow-md">
+            View My Work
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-xl border border-blue-600 text-blue-600 font-medium hover:bg-blue-50 transition shadow-sm">
+            Contact Me
+          </a>
+          <a href="resume.pdf" download class="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-yellow-400 text-white font-medium hover:opacity-90 transition shadow-md">
+            <i class="fas fa-download mr-2"></i>Resume
           </a>
         </div>
       </div>
       <div class="flex justify-center">
-        <img src="profile.jpg" alt="Josamine" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-blue-100"/>
+        <img src="profile.jpg" alt="Josamine" class="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-blue-100 hover:scale-105 transition"/>
       </div>
     </div>
   </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="py-12 md:py-20 bg-gray-100">
-  <div class="container px-4 sm:px-6">
-    <h2 class="text-3xl md:text-4xl fw-bold text-center mb-12 reveal">
-      My <span class="gradient-text">Works</span>
-    </h2>
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-14">
+        My <span class="bg-gradient-to-r from-blue-600 to-yellow-400 bg-clip-text text-transparent">Works</span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Project Card -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
+          <h3 class="text-xl font-semibold mb-2">POS and Inventory Management System</h3>
+          <p class="text-gray-600 mb-4">Full-stack system with Java and MySQL.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-sm rounded-full bg-orange-100 text-orange-800">Java</span>
+            <span class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-800">MySQL</span>
+          </div>
+          <button class="px-4 py-2 rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-50 transition">
+            View Details
+          </button>
+        </div>
 
-      <!-- Project 1 -->
-      <div class="project-card soft-card bg-white p-5 reveal">
-        <h3 class="text-xl fw-bold mb-2">POS and Inventory Management System</h3>
-        <p class="text-gray-600 mb-3">Full-stack system application with Java and MySQL.</p>
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="badge bg-orange-100 text-orange-800">Java</span>
-          <span class="badge bg-teal-100 text-teal-800">MySQL</span>
+        <!-- Project Card -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
+          <h3 class="text-xl font-semibold mb-2">Restaurant Mobile Application</h3>
+          <p class="text-gray-600 mb-4">Mobile app for food ordering & catering booking.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-sm rounded-full bg-orange-100 text-orange-800">Java</span>
+            <span class="px-3 py-1 text-sm rounded-full bg-pink-100 text-pink-800">UI/UX</span>
+            <span class="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-800">SQLite</span>
+          </div>
+          <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view" target="_blank" class="text-blue-600 font-medium hover:text-blue-800">APK →</a>
         </div>
-        <div class="project-actions d-flex gap-2">
-          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-pos">View details</button>
+
+        <!-- Project Card -->
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6">
+          <h3 class="text-xl font-semibold mb-2">Voter's Registration System</h3>
+          <p class="text-gray-600 mb-4">System for managing voter details.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 text-sm rounded-full bg-orange-100 text-orange-800">Java</span>
+            <span class="px-3 py-1 text-sm rounded-full bg-teal-100 text-teal-800">MySQL</span>
+          </div>
+          <a href="https://github.com/Josaminep/Voters-Registration" target="_blank" class="text-blue-600 font-medium hover:text-blue-800">Github Repo →</a>
         </div>
+
       </div>
-
-      <!-- Project 2 -->
-      <div class="project-card soft-card bg-white p-5 reveal">
-        <h3 class="text-xl fw-bold mb-2">Restaurant Mobile Application</h3>
-        <p class="text-gray-600 mb-3">Mobile app for restaurant food ordering & catering booking. (Frontend focused)</p>
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="badge bg-orange-100 text-orange-800">Java</span>
-          <span class="badge bg-pink-100 text-pink-800">UI/UX Design</span>
-          <span class="badge bg-gray-100 text-gray-800">SQLite</span>
-        </div>
-        <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank">APK →</a>
-        <div class="project-actions d-flex gap-2 mt-2">
-          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-restaurant">View details</button>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card soft-card bg-white p-5 reveal">
-        <h3 class="text-xl fw-bold mb-2">Voter's Registration System</h3>
-        <p class="text-gray-600 mb-3">Full-stack system for registering voters and managing their details.</p>
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="badge bg-orange-100 text-orange-800">Java</span>
-          <span class="badge bg-teal-100 text-teal-800">MySQL</span>
-        </div>
-        <a href="https://github.com/Josaminep/Voters-Registration" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank">Github Repo →</a>
-        <div class="project-actions d-flex gap-2 mt-2">
-          <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-voters">View details</button>
-        </div>
-      </div>
-
-      <!-- Hidden Projects -->
-      <div id="more-projects" class="contents hidden">
-
-        <!-- Project 4 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <h3 class="text-xl fw-bold mb-2">Simple Todo List Application</h3>
-          <p class="text-gray-600 mb-3">A simple app to keep track of daily tasks and to-dos.</p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-blue-100 text-blue-800">HTML/CSS</span>
-            <span class="badge bg-yellow-100 text-yellow-800">JavaScript</span>
-            <span class="badge bg-yellow-100 text-yellow-800">Bootstrap</span>
-          </div>
-          <a href="https://josaminep.github.io/todo-app/" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank">Live View →</a>
-          <div class="project-actions d-flex gap-2 mt-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-todo">View details</button>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <h3 class="text-xl fw-bold mb-2">Simple Inventory Management</h3>
-          <p class="text-gray-600 mb-3">Inventory management system for sari-sari store with CRUD features.</p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-blue-100 text-blue-800">HTML/CSS</span>
-            <span class="badge bg-indigo-100 text-indigo-800">PHP</span>
-            <span class="badge bg-yellow-100 text-yellow-800">JavaScript</span>
-            <span class="badge bg-teal-100 text-teal-800">MySQL</span>
-          </div>
-          <a href="https://github.com/Josaminep/Simple-Inventory" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank">Github Repo →</a>
-          <div class="project-actions d-flex gap-2 mt-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-inventory">View details</button>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <h3 class="text-xl fw-bold mb-2">Gabaldon Tourism Website</h3>
-          <p class="text-gray-600 mb-3">Tourism website showcasing attractions, resorts, and services.</p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-purple-100 text-purple-800">Wix</span>
-            <span class="badge bg-purple-100 text-purple-800">Wix CMS</span>
-          </div>
-          <a href="https://gabaldonturismo.wixsite.com/gabaldon-tourism" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank">Live View →</a>
-          <div class="project-actions d-flex gap-2 mt-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-gabaldon">View details</button>
-          </div>
-        </div>
-
-        <!-- Project 7 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <h3 class="text-xl fw-bold mb-2">Payroll Management System</h3>
-          <p class="text-gray-600 mb-3">Proposed web-based system for LGU Gabaldon to manage payroll & employee records.</p>
-          <div class="flex flex-wrap gap-2 mb-1">
-            <span class="badge bg-blue-100 text-blue-800">HTML/CSS</span>
-            <span class="badge bg-indigo-100 text-indigo-800">PHP</span>
-            <span class="badge bg-yellow-100 text-yellow-800">JavaScript</span>
-            <span class="badge bg-teal-100 text-teal-800">MySQL</span>
-          </div>
-          <div class="project-actions d-flex gap-2 mt-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-payroll">View details</button>
-          </div>
-        </div>
-
+      <div class="text-center mt-10">
+        <button id="toggle-projects" class="px-6 py-3 rounded-xl border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition shadow-sm">
+          View All Projects
+        </button>
       </div>
     </div>
-
-    <!-- Toggle Projects -->
-    <div class="text-center mt-10 reveal">
-      <button id="toggle-projects" class="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition text-sm sm:text-base">
-        View All Projects
-      </button>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- SKILLS -->
   <section id="skills" class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-blue-600">Skills</span></h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-html5 text-orange-600 text-3xl mb-2"></i>
-          <p class="font-bold">HTML</p>
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-14">My <span class="text-blue-600">Skills</span></h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fab fa-html5 text-orange-600 text-4xl mb-3"></i>
+          <p class="font-semibold">HTML</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-css3-alt text-blue-600 text-3xl mb-2"></i>
-          <p class="font-bold">CSS</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fab fa-css3-alt text-blue-600 text-4xl mb-3"></i>
+          <p class="font-semibold">CSS</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-php text-indigo-600 text-3xl mb-2"></i>
-          <p class="font-bold">C++</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fab fa-js text-yellow-500 text-4xl mb-3"></i>
+          <p class="font-semibold">JavaScript</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-js text-yellow-500 text-3xl mb-2"></i>
-          <p class="font-bold">JavaScript</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fab fa-java text-red-600 text-4xl mb-3"></i>
+          <p class="font-semibold">Java</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-java text-red-600 text-3xl mb-2"></i>
-          <p class="font-bold">Java</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fas fa-database text-indigo-600 text-4xl mb-3"></i>
+          <p class="font-semibold">MySQL</p>
         </div>
-          <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-php text-indigo-600 text-3xl mb-2"></i>
-          <p class="font-bold">Python</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fab fa-python text-green-600 text-4xl mb-3"></i>
+          <p class="font-semibold">Python</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-php text-indigo-600 text-3xl mb-2"></i>
-          <p class="font-bold">PHP</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fab fa-php text-indigo-600 text-4xl mb-3"></i>
+          <p class="font-semibold">PHP</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <i class="fab fa-php text-indigo-600 text-3xl mb-2"></i>
-          <p class="font-bold">MySQL</p>
+
+        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition">
+          <i class="fas fa-code text-gray-700 text-4xl mb-3"></i>
+          <p class="font-semibold">C++</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-20 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-8">Get in <span class="text-blue-600">Touch</span></h2>
-      <p class="text-gray-600 mb-6">I'm open to freelance and full-time roles. Let’s connect!</p>
-      <div class="flex justify-center gap-4 mb-6">
-        <a href="mailto:parungaojosamine06@gmail.com" class="text-blue-600 hover:text-blue-800"><i class="fas fa-envelope text-2xl"></i></a>
-        <a href="https://linkedin.com/in/josamine-parungao" target="_blank" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin text-2xl"></i></a>
-        <a href="https://github.com/Josaminep" target="_blank" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github text-2xl"></i></a>
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-8">Get in <span class="text-blue-600">Touch</span></h2>
+      <p class="text-gray-600 mb-6">I'm open to freelance and full-time opportunities. Let’s connect!</p>
+      <div class="flex justify-center gap-6 mb-8">
+        <a href="mailto:parungaojosamine06@gmail.com" class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-envelope text-3xl"></i></a>
+        <a href="https://linkedin.com/in/josamine-parungao" target="_blank" class="text-blue-600 hover:text-blue-800 transition"><i class="fab fa-linkedin text-3xl"></i></a>
+        <a href="https://github.com/Josaminep" target="_blank" class="text-blue-600 hover:text-blue-800 transition"><i class="fab fa-github text-3xl"></i></a>
       </div>
       <p class="text-gray-500">&copy; <span id="year"></span> Josamine R. Parungao. All Rights Reserved.</p>
     </div>
@@ -233,6 +173,5 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
