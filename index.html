@@ -2,700 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Josamine Portfolio</title>
-
-  <!-- Tailwind (JIT CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Bootstrap 5 -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-
-  <style>
-    :root{
-      --brand1:#06b6d4; /* cyan */
-      --brand2:#3b82f6; /* blue */
-      --ink:#111827;    /* gray-900 */
-      --muted:#6b7280;  /* gray-500 */
-    }
-
-    /* Gradient brand text */
-    .gradient-text{
-      background: linear-gradient(90deg, var(--brand1), var(--brand2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    /* Glassy navbar */
-    .glass-nav{
-      background: rgba(255,255,255,.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(17,24,39,.06);
-    }
-
-    /* Elevation + motion */
-    .soft-card{
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,.05);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .soft-card:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(0,0,0,.08);
-    }
-
-    /* Project cards overlay link */
-    .project-cover{ position: relative; overflow: hidden; }
-    .project-cover::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(255,255,255,0) 40%, rgba(6,182,212,.08));
-      opacity:0; transition: opacity .3s ease;
-    }
-    .project-card:hover .project-cover::after{ opacity:1; }
-    .project-actions{
-      opacity:0; transform: translateY(6px);
-      transition: all .25s ease;
-    }
-    .project-card:hover .project-actions{
-      opacity:1; transform: translateY(0);
-    }
-
-    /* Skill bars (animated) */
-    .skill-bar{
-      height: 10px; border-radius: 999px; overflow: hidden;
-      background: #e5e7eb;
-    }
-    .skill-fill{
-      height: 100%; border-radius: inherit;
-      background: linear-gradient(90deg, var(--brand1), var(--brand2));
-      width: 0;
-      transition: width 1.2s ease;
-    }
-    .skill-item:hover{ transform: translateY(-2px); }
-
-    /* Link underline micro-interaction */
-    .nav-link-enhanced{
-      position: relative;
-    }
-    .nav-link-enhanced::after{
-      content:""; position:absolute; left:0; bottom:-4px;
-      width:0; height:2px; background: var(--brand2);
-      transition: width .25s ease;
-    }
-    .nav-link-enhanced:hover::after{ width:100%; }
-
-    /* Touch targets */
-    a, button{ min-width: 44px; min-height: 44px; touch-action: manipulation; }
-
-    /* Smooth section fade-in */
-    .reveal{ opacity:0; transform: translateY(14px); transition: all .6s ease; }
-    .reveal.show{ opacity:1; transform: none; }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-900">
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top glass-nav z-50">
-    <div class="container">
-      <a class="navbar-brand fw-bold gradient-text" href="#home">Portfolio</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#nav"
-        aria-controls="nav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="nav">
-        <ul class="navbar-nav gap-2 fw-medium">
-          <li class="nav-item"><a href="#home" class="nav-link nav-link-enhanced">Home</a></li>
-          <li class="nav-item"><a href="#projects" class="nav-link nav-link-enhanced">Projects</a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link nav-link-enhanced">Skills</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link nav-link-enhanced">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">Portfolio</a>
+      <ul class="hidden md:flex gap-6 font-medium">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+      <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+    </nav>
+  </header>
 
   <!-- HERO -->
-  <section id="home" class="min-h-screen flex items-center pt-24 pb-12">
-    <div class="container px-4 sm:px-6 py-6 grid md:grid-cols-2 gap-10 items-center reveal">
-      <div class="text-center md:text-left">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl fw-bold mb-3 break-words">
-          Hi, I'm <span class="gradient-text">Josamine R. Parungao</span>
+  <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6">
+    <div class="max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm 
+          <span class="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">Josamine</span>
         </h1>
-        <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-5">
-          <span class="text-gray-800">I'm a</span>
-          <span class="gradient-text font-medium">BS in Information Technology graduate with experience in web and mobile development</span>
-        </h2>
-        <p class="text-sm sm:text-base text-gray-600 mb-6">
-          As a recent Web Systems Technology graduate, I bring a strong foundation in both web and mobile development, with hands-on experience using HTML, CSS, JavaScript, PHP, MySQL, and Java. I’m excited to contribute to real-world projects, collaborate with teams, and continue growing in a professional etting. With a positive mindset and a passion for creating practical digital solutions, I aim to support the team's goals while expanding my skills.
-        </p>
-
-        <div class="d-flex flex-column flex-sm-row gap-3 justify-center md:justify-start">
-          <a href="#projects" class="btn btn-primary px-4 py-2 rounded-lg">
-            View My Work
-          </a>
-          <a href="#contact" class="btn btn-outline-primary px-4 py-2 rounded-lg">
-            Contact Me
-          </a>
+        <p class="text-lg text-gray-600 mb-6">BS in Information Technology graduate with hands-on experience in web & mobile development.</p>
+        <div class="flex gap-4">
+          <a href="#projects" class="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition">View My Work</a>
+          <a href="#contact" class="px-6 py-3 rounded-lg border border-blue-600 text-blue-600 font-medium hover:bg-blue-50 transition">Contact Me</a>
         </div>
       </div>
-
-      <div class="flex justify-center md:justify-end">
-        <div class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg">
-          <img
-            src="profile.jpg"
-            alt="Professional portrait of the portfolio owner standing confidently in a modern office environment"
-            class="w-full h-full object-cover"
-          />
-        </div>
+      <div class="flex justify-center">
+        <img src="profile.jpg" alt="Josamine" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-blue-100"/>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="py-12 md:py-20 bg-gray-100">
-    <div class="container px-4 sm:px-6">
-      <h2 class="text-3xl md:text-4xl fw-bold text-center mb-12 reveal">
-        My <span class="gradient-text">Works</span>
-      </h2>
-
-      <!-- Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
-        <!-- Project 1 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <div class="project-cover mb-3">
-            <div class="h-36 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-xl"></div>
-          </div>
-          <h3 class="text-xl fw-bold mb-2">POS and Inventory Management System</h3>
-          <p class="text-gray-600 mb-3">
-            Full-stack system application with Java and MySQL.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-orange-100 text-orange-800" data-bs-toggle="tooltip" title="Java language">Java</span>
-            <span class="badge bg-teal-100 text-teal-800" data-bs-toggle="tooltip" title="Relational Database">MySQL</span>
-          </div>
-          <div class="project-actions d-flex gap-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-pos">View details</button>
+  <section id="projects" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-blue-600">Projects</span></h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Example Project -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+          <div class="h-40 bg-gradient-to-r from-cyan-100 to-blue-100"></div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold mb-2">POS & Inventory System</h3>
+            <p class="text-gray-600 text-sm mb-4">Full-stack application built with Java & MySQL.</p>
+            <a href="#" class="text-blue-600 hover:underline">View Details →</a>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <div class="project-cover mb-3">
-            <div class="h-36 bg-gradient-to-r from-amber-100 to-pink-100 rounded-xl"></div>
-          </div>
-          <h3 class="text-xl fw-bold mb-2">Restaurant Mobile Application</h3>
-          <p class="text-gray-600 mb-3">
-            A mobile application designed for restaurant food ordering and catering service booking. Focused on frontend development only.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-orange-100 text-orange-800" data-bs-toggle="tooltip" title="Java for Android">Java</span>
-            <span class="badge bg-pink-100 text-pink-800" data-bs-toggle="tooltip" title="User Interface & Experience">UI/UX Design</span>
-            <span class="badge bg-gray-100 text-gray-800" data-bs-toggle="tooltip" title="Local DB">SQLite</span>
-          </div>
-          <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view"
-             class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank" rel="noopener">
-            APK →
-          </a>
-          <div class="project-actions d-flex gap-2 mt-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-restaurant">View details</button>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card soft-card bg-white p-5 reveal">
-          <div class="project-cover mb-3">
-            <div class="h-36 bg-gradient-to-r from-orange-100 to-teal-100 rounded-xl"></div>
-          </div>
-          <h3 class="text-xl fw-bold mb-2">Voter's Registration System</h3>
-          <p class="text-gray-600 mb-3">
-            A full stack system application for registering voters and manage their personal details.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-orange-100 text-orange-800" data-bs-toggle="tooltip" title="Java language">Java</span>
-            <span class="badge bg-teal-100 text-teal-800" data-bs-toggle="tooltip" title="Relational Database">MySQL</span>
-          </div>
-          <a href="https://github.com/Josaminep/Voters-Registration"
-             class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank" rel="noopener">
-            Github Repo →
-          </a>
-          <div class="project-actions d-flex gap-2 mt-2">
-            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-voters">View details</button>
-          </div>
-        </div>
-
-        <!-- Hidden Projects Wrapper (kept as requested) -->
-        <div id="more-projects" class="contents hidden">
-
-          <!-- Project 4 -->
-          <div class="project-card soft-card bg-white p-5 reveal">
-            <div class="project-cover mb-3">
-              <div class="h-36 bg-gradient-to-r from-blue-100 to-yellow-100 rounded-xl"></div>
-            </div>
-            <h3 class="text-xl fw-bold mb-2">Simple Todo List Application</h3>
-            <p class="text-gray-600 mb-3">
-              A simple app to keep track of daily tasks and to-dos.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-blue-100 text-blue-800" data-bs-toggle="tooltip" title="Markup & Styles">HTML/CSS</span>
-              <span class="badge bg-yellow-100 text-yellow-800" data-bs-toggle="tooltip" title="Client scripting">JavaScript</span>
-              <span class="badge bg-yellow-100 text-yellow-800" data-bs-toggle="tooltip" title="CSS Framework">Bootstrap</span>
-            </div>
-            <a href="https://josaminep.github.io/todo-app/" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank" rel="noopener">Live View →</a>
-            <div class="project-actions d-flex gap-2 mt-2">
-              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-todo">View details</button>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card soft-card bg-white p-5 reveal">
-            <div class="project-cover mb-3">
-              <div class="h-36 bg-gradient-to-r from-blue-100 to-teal-100 rounded-xl"></div>
-            </div>
-            <h3 class="text-xl fw-bold mb-2">Simple Inventory Management</h3>
-            <p class="text-gray-600 mb-3">
-              An inventory management system tailored for a sari-sari store, featuring full CRUD capabilities for tracking and updating stock.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-blue-100 text-blue-800" data-bs-toggle="tooltip" title="Structure & styles">HTML/CSS</span>
-              <span class="badge bg-indigo-100 text-indigo-800" data-bs-toggle="tooltip" title="Server-side">PHP</span>
-              <span class="badge bg-yellow-100 text-yellow-800" data-bs-toggle="tooltip" title="Client scripting">JavaScript</span>
-              <span class="badge bg-teal-100 text-teal-800" data-bs-toggle="tooltip" title="Database">MySQL</span>
-            </div>
-            <a href="https://github.com/Josaminep/Simple-Inventory" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank" rel="noopener">Github Repo →</a>
-            <div class="project-actions d-flex gap-2 mt-2">
-              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-inventory">View details</button>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project-card soft-card bg-white p-5 reveal">
-            <div class="project-cover mb-3">
-              <div class="h-36 bg-gradient-to-r from-purple-100 to-purple-200 rounded-xl"></div>
-            </div>
-            <h3 class="text-xl fw-bold mb-2">Gabaldon Tourism Website</h3>
-            <p class="text-gray-600 mb-3">
-              A website designed to showcase Gabaldon's tourist attractions, resorts, and local services.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-purple-100 text-purple-800" data-bs-toggle="tooltip" title="Website builder">Wix</span>
-              <span class="badge bg-purple-100 text-purple-800" data-bs-toggle="tooltip" title="Content management">Wix CMS</span>
-            </div>
-            <a href="https://gabaldonturismo.wixsite.com/gabaldon-tourism" class="text-blue-600 hover:text-blue-800 fw-semibold" target="_blank" rel="noopener">Live View →</a>
-            <div class="project-actions d-flex gap-2 mt-2">
-              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-gabaldon">View details</button>
-            </div>
-          </div>
-
-          <!-- Project 7 -->
-          <div class="project-card soft-card bg-white p-5 reveal">
-            <div class="project-cover mb-3">
-              <div class="h-36 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl"></div>
-            </div>
-            <h3 class="text-xl fw-bold mb-2">Payroll Management System</h3>
-            <p class="text-gray-600 mb-3">
-              Proposed development of a web-based system for LGU Gabaldon to improve efficiency in managing employee records, payroll, and salary transactions.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-1">
-              <span class="badge bg-blue-100 text-blue-800" data-bs-toggle="tooltip" title="Structure & styles">HTML/CSS</span>
-              <span class="badge bg-indigo-100 text-indigo-800" data-bs-toggle="tooltip" title="Server-side">PHP</span>
-              <span class="badge bg-yellow-100 text-yellow-800" data-bs-toggle="tooltip" title="Client scripting">JavaScript</span>
-              <span class="badge bg-teal-100 text-teal-800" data-bs-toggle="tooltip" title="Database">MySQL</span>
-            </div>
-            <div class="project-actions d-flex gap-2 mt-2">
-              <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal-payroll">View details</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="text-center mt-10 reveal">
-        <button
-          id="toggle-projects"
-          class="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition text-sm sm:text-base"
-        >
-          View All Projects
-        </button>
+        <!-- Add more projects following same pattern -->
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="py-12 md:py-20">
-    <div class="container px-4 sm:px-6">
-      <h2 class="text-3xl md:text-4xl fw-bold text-center mb-12 reveal">
-        My <span class="gradient-text">Skills</span>
-      </h2>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
-        <!-- HTML -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-orange-100 rounded-full">
-            <i class="fab fa-html5 text-orange-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">HTML</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="85"></div></div>
+  <section id="skills" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-blue-600">Skills</span></h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fab fa-html5 text-orange-600 text-3xl mb-2"></i>
+          <p class="font-bold">HTML</p>
         </div>
-
-        <!-- CSS -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-blue-100 rounded-full">
-            <i class="fab fa-css3-alt text-blue-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">CSS</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="75"></div></div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fab fa-css3-alt text-blue-600 text-3xl mb-2"></i>
+          <p class="font-bold">CSS</p>
         </div>
-
-        <!-- JavaScript -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-yellow-100 rounded-full">
-            <i class="fab fa-js text-yellow-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">JavaScript</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="50"></div></div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fab fa-js text-yellow-500 text-3xl mb-2"></i>
+          <p class="font-bold">JavaScript</p>
         </div>
-
-        <!-- Java -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-red-100 rounded-full">
-            <i class="fab fa-java text-red-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">Java</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="75"></div></div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fab fa-java text-red-600 text-3xl mb-2"></i>
+          <p class="font-bold">Java</p>
         </div>
-
-        <!-- PHP -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-100 rounded-full">
-            <i class="fab fa-php text-indigo-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">PHP</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="80"></div></div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <i class="fab fa-php text-indigo-600 text-3xl mb-2"></i>
+          <p class="font-bold">PHP</p>
         </div>
-
-        <!-- MySQL -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-teal-100 rounded-full">
-            <i class="fas fa-database text-teal-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">MySQL</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="80"></div></div>
-        </div>
-
-        <!-- React -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-cyan-100 rounded-full">
-            <i class="fab fa-react text-cyan-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">React</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="30"></div></div>
-        </div>
-
-        <!-- Angular -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-red-100 rounded-full">
-            <i class="fab fa-angular text-red-600 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">Angular</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="30"></div></div>
-        </div>
-
-        <!-- C++ -->
-        <div class="skill-item bg-white p-6 rounded-xl shadow-sm text-center soft-card reveal">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-gray-100 rounded-full">
-            <i class="fas fa-code text-gray-700 text-2xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">C++</h3>
-          <div class="skill-bar"><div class="skill-fill" data-skill="70"></div></div>
-        </div>
-      </div>
-
-      <div class="mt-16 max-w-3xl mx-auto reveal">
-        <h3 class="text-xl font-bold mb-3 text-center">What I Bring to the Table</h3>
-        <p class="text-sm sm:text-base text-gray-600 text-center">
-          As a recent Web Systems Technology graduate, I bring a strong foundation in both web and mobile development, with hands-on experience using HTML, CSS, JavaScript, PHP, MySQL, and Java. I’m excited to contribute to real-world projects, collaborate with teams, and continue growing in a professional setting. With a positive mindset and a passion for creating practical digital solutions, I aim to support the team's goals while expanding my skills.
-        </p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-12 md:py-20 bg-gray-100">
-    <div class="container px-4 sm:px-6">
-      <h2 class="text-3xl md:text-4xl fw-bold text-center mb-12 reveal">
-        Get In <span class="gradient-text">Touch</span>
-      </h2>
-
-      <div class="flex flex-col lg:flex-row gap-8 justify-center reveal">
-        <div class="lg:w-1/2">
-          <h3 class="text-xl font-bold mb-4 text-center lg:text-left">Let's Work Together</h3>
-          <p class="text-sm sm:text-base text-gray-600 mb-6 text-center lg:text-left">
-            I'm open to both freelance opportunities and full-time roles. Whether you have a project in mind or just want to connect, feel free to reach out!
-          </p>
-
-          <div class="space-y-4">
-            <div class="d-flex align-items-center justify-content-center lg:justify-start">
-              <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full me-3">
-                <i class="fas fa-envelope text-blue-600"></i>
-              </div>
-              <span class="text-sm sm:text-base">parungaojosamine06@gmail.com</span>
-            </div>
-            <div class="d-flex align-items-center justify-content-center lg:justify-start">
-              <div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full me-3">
-                <i class="fas fa-phone-alt text-blue-600"></i>
-              </div>
-              <span class="text-sm sm:text-base">+63981-538-2299</span>
-            </div>
-            <div class="d-flex align-items-center justify-content-center lg:justify-start">
-              <div class="w-10 h-10 flex items-center justify-content-center bg-blue-100 rounded-full me-3">
-                <i class="fas fa-map-marker-alt text-blue-600"></i>
-              </div>
-              <span class="text-sm sm:text-base">Gabaldon, Nueva Ecija, Philippines, 3131</span>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center lg:justify-start gap-3 mt-6">
-            <a href="https://www.linkedin.com/in/josamine-parungao/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-blue-600 hover:bg-blue-200 transition">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/Josaminep" target="_blank" class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-blue-600 hover:bg-blue-200 transition">
-              <i class="fab fa-github"></i>
-            </a>
-            <!-- Discord -->
-            <a href="1025422306094366774" target="_blank" class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full text-blue-600 hover:bg-blue-200 transition">
-              <i class="fab fa-discord"></i>
-            </a>
-          </div>
-        </div>
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8">Get in <span class="text-blue-600">Touch</span></h2>
+      <p class="text-gray-600 mb-6">I'm open to freelance and full-time roles. Let’s connect!</p>
+      <div class="flex justify-center gap-4 mb-6">
+        <a href="mailto:parungaojosamine06@gmail.com" class="text-blue-600 hover:text-blue-800"><i class="fas fa-envelope text-2xl"></i></a>
+        <a href="https://linkedin.com/in/josamine-parungao" target="_blank" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin text-2xl"></i></a>
+        <a href="https://github.com/Josaminep" target="_blank" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github text-2xl"></i></a>
       </div>
-
-      <p class="text-center text-gray-500 mt-10">&copy; <span id="year"></span> Josamine R. Parungao. All Rights Reserved.</p>
+      <p class="text-gray-500">&copy; <span id="year"></span> Josamine R. Parungao. All Rights Reserved.</p>
     </div>
   </section>
 
-  <!-- PROJECT MODALS (Bootstrap) -->
-  <!-- POS -->
-  <div class="modal fade" id="modal-pos" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">POS and Inventory Management System</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          Full-stack system application with Java and MySQL.
-          <div class="mt-3">
-            <span class="badge text-bg-warning">Java</span>
-            <span class="badge text-bg-info">MySQL</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Restaurant App -->
-  <div class="modal fade" id="modal-restaurant" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Restaurant Mobile Application</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          A mobile application designed for restaurant food ordering and catering service booking. Focused on frontend development only.
-          <div class="mt-3">
-            <span class="badge text-bg-warning">Java</span>
-            <span class="badge text-bg-secondary">UI/UX Design</span>
-            <span class="badge text-bg-dark">SQLite</span>
-          </div>
-          <a href="https://drive.google.com/file/d/1R07Ci1aHg1dXd1T_75xtCH2LHzInNQF-/view" class="btn btn-sm btn-primary mt-3" target="_blank" rel="noopener">Open APK</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Voters -->
-  <div class="modal fade" id="modal-voters" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Voter's Registration System</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          A full stack system application for registering voters and manage their personal details.
-          <div class="mt-3">
-            <span class="badge text-bg-warning">Java</span>
-            <span class="badge text-bg-info">MySQL</span>
-          </div>
-          <a href="https://github.com/Josaminep/Voters-Registration" class="btn btn-sm btn-primary mt-3" target="_blank" rel="noopener">Open GitHub Repo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Todo -->
-  <div class="modal fade" id="modal-todo" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Simple Todo List Application</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          A simple app to keep track of daily tasks and to-dos.
-          <div class="mt-3">
-            <span class="badge text-bg-primary">HTML/CSS</span>
-            <span class="badge text-bg-warning">JavaScript</span>
-            <span class="badge text-bg-warning">Bootstrap</span>
-          </div>
-          <a href="https://josaminep.github.io/todo-app/" class="btn btn-sm btn-primary mt-3" target="_blank" rel="noopener">Open Live View</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Inventory -->
-  <div class="modal fade" id="modal-inventory" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Simple Inventory Management</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          An inventory management system tailored for a sari-sari store, featuring full CRUD capabilities for tracking and updating stock.
-          <div class="mt-3">
-            <span class="badge text-bg-primary">HTML/CSS</span>
-            <span class="badge text-bg-indigo">PHP</span>
-            <span class="badge text-bg-warning">JavaScript</span>
-            <span class="badge text-bg-info">MySQL</span>
-          </div>
-          <a href="https://github.com/Josaminep/Simple-Inventory" class="btn btn-sm btn-primary mt-3" target="_blank" rel="noopener">Open GitHub Repo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Gabaldon -->
-  <div class="modal fade" id="modal-gabaldon" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Gabaldon Tourism Website</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          A website designed to showcase Gabaldon's tourist attractions, resorts, and local services.
-          <div class="mt-3">
-            <span class="badge text-bg-purple">Wix</span>
-            <span class="badge text-bg-purple">Wix CMS</span>
-          </div>
-          <a href="https://gabaldonturismo.wixsite.com/gabaldon-tourism" class="btn btn-sm btn-primary mt-3" target="_blank" rel="noopener">Open Live View</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Payroll -->
-  <div class="modal fade" id="modal-payroll" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-3">
-        <div class="modal-header">
-          <h5 class="modal-title">Payroll Management System</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-muted">
-          Proposed development of a web-based system for LGU Gabaldon to improve efficiency in managing employee records, payroll, and salary transactions.
-          <div class="mt-3">
-            <span class="badge text-bg-primary">HTML/CSS</span>
-            <span class="badge text-bg-indigo">PHP</span>
-            <span class="badge text-bg-warning">JavaScript</span>
-            <span class="badge text-bg-info">MySQL</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPTS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
-    // Bootstrap tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
-
-    // Smooth scroll for anchor links (preserve your behavior)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        const href = this.getAttribute('href');
-        if(href && href.length > 1){
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // View All Projects toggle (kept)
-    const toggleButton = document.getElementById('toggle-projects');
-    const hiddenProjects = document.getElementById('more-projects');
-    toggleButton.addEventListener('click', () => {
-      if (hiddenProjects.classList.contains('hidden')) {
-        hiddenProjects.classList.remove('hidden');
-        toggleButton.textContent = 'Show Less';
-      } else {
-        hiddenProjects.classList.add('hidden');
-        toggleButton.textContent = 'View All Projects';
-      }
-    });
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-
-          // animate skill bars when skills enter
-          if(entry.target.classList.contains('skill-item')){
-            const fill = entry.target.querySelector('.skill-fill');
-            if(fill && !fill.dataset.done){
-              const pct = fill.dataset.skill || 0;
-              requestAnimationFrame(() => { fill.style.width = pct + '%'; });
-              fill.dataset.done = "1";
-            }
-          }
-        }
-      });
-    }, { threshold: .12 });
-
-    document.querySelectorAll('.reveal, .skill-item').forEach(el => io.observe(el));
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
